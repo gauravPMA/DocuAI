@@ -1,0 +1,596 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/home/ai/.local/lib/python3.10/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.66s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.54s/it]
+You are calling `save_pretrained` to a 4-bit converted model, but your `bitsandbytes` version doesn't support it. If you want to save 4-bit models, make sure to have `bitsandbytes>=0.41.3` installed.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+/home/ai/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Model loaded on cuda:0
+ * Serving Flask app 'pb_app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5010
+ * Running on http://192.168.7.105:5010
+[33mPress CTRL+C to quit[0m
+ * Restarting with watchdog (inotify)
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/home/ai/.local/lib/python3.10/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.74s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.21s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.59s/it]
+You are calling `save_pretrained` to a 4-bit converted model, but your `bitsandbytes` version doesn't support it. If you want to save 4-bit models, make sure to have `bitsandbytes>=0.41.3` installed.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+/home/ai/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 586-660-439
+/home/ai/.local/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:515: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+127.0.0.1 - - [25/Jun/2024 08:52:07] "POST /ask HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jun/2024 08:52:38] "POST /ask HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jun/2024 08:53:42] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 08:57:47] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:02:35] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:03:13] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:18:43] "POST /ask HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jun/2024 09:19:05] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:26:44] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:32:05] "POST /ask HTTP/1.1" 200 -
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+192.168.7.214 - - [25/Jun/2024 09:32:54] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:40:23] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 09:42:07] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 10:28:31] "POST /ask HTTP/1.1" 200 -
+192.168.7.214 - - [25/Jun/2024 10:28:56] "POST /ask HTTP/1.1" 200 -
+ * Detected change in '/data/ai/gaurav/flask/app.py', reloading
+ * Detected change in '/data/ai/gaurav/flask/app.py', reloading
+ * Detected change in '/data/ai/gaurav/flask/app.py', reloading
+Model loaded on cuda:0
+Input question: 1 . Q: what is the Currency wise analysis of deposit from customers of group and bank Current year?
+Generated response:   I don't know the answer to your question as the information provided in the given text does not include any currency-wise analysis of deposits from customers of the group and bank. The text only provides the total amount of deposits from customers for both the current and previous years.
+Input question: Currency wise analysis of deposit from customers of group and bank Current year?
+Generated response:  Based on the given data, the currency wise analysis of deposits from customers of the group and bank in the current year is as follows:
+Deposits from Customers (in Millions)
+Current Year:
+* Nepalese Rupees: 7,107,431,367
+* US Dollars: 1,377,108,215
+* Other Currencies: 1,043,647,869
+
+Previous Year:
+* Nepalese Rupees: 6,265,419,794
+* US Dollars: 1,000,702,727
+* Other Currencies: 1,043,647,869
+
+Note: The data is based on the information provided in the given financial statements of the bank group for the year ended 31st Ashadh 2078.
+Input question: what is the total amount recognized in profit or loss For the year ended 31st Ashadh 2078?
+Generated response:  The total amount recognized in profit or loss for the year ended 31st Ashadh 2078 is 3,160,025,286.
+Note: The answer is based on the information provided in the given condensed consolidated statement of profit or loss.
+Input question: total interest income for the year 31th 
+Generated response:  total interest income for the year 31th is 11,928,535.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Input question: what is the Currency wise analysis of deposit from customers of group and bank Current year?
+Generated response:  The currency wise analysis of deposits from customers of the group and bank for the current year is as follows:
+Deposits from Customers (in Million)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Input question:  Currency wise analysis of deposit from customers of group and bank Current year?
+Generated response:   Based on the information provided in the annual report of the bank group for the year ended 31st Ashadh 2078, the currency wise analysis of deposits from customers of the group and bank is as follows:
+Deposits from customers of the group in current year (2078) were:
+* Nepalese Rupees (NRs) 7,107,431,367
+* US Dollars (USD) 1,377,108,215
+* Other currencies 1,377,108,215
+In the previous year (2077), the deposits from customers of the group were:
+* NRs 6,265,419,794
+* USD 1,000,702,727
+* Other currencies 1,000,702,727
+Therefore, based on the information provided in the annual report, the deposits from customers of the group and bank in current year (2078) were higher than the previous year (20
+Input question: total amount recognized in profit or loss For the year ended 31st Ashadh 2078?
+Generated response:  The total amount recognized in profit or loss for the year ended 31st Ashadh 2078 is 1,889,334,762.
+Note: The answer is based on the information provided in the given condensed consolidated statement of profit or loss for the year ended 31st Ashadh 2078.
+Input question: which bank pdf is this ?
+Generated response:  This is the Prabhu Bank Limited's annual report for the year ended 31st Ashadh 2078.
+Input question: Total interest income For the year ended 31st Ashadh 2078 for groups and banks?
+Generated response: 
+Total interest income for the year ended 31st Ashadh 2078 for the bank group is 9,137,964,711 and for the banks it is 10,405,138,657.
+Input question: Risk Weighted Exposure For Market Risk For the year ended 31 Ashad 2078 give the Relevant Open Position for each currency.
+Generated response:  The relevant open position for each currency is given in the table above.
+Note: The table above shows the relevant open position for each currency, which is the product of the risk weight (reciprocal of capital requirement of 10%) and the equivalent risk weight exposure.
+Input question: Basis of Consolidation?
+Generated response:  The basis of consolidation refers to the method used to combine the financial statements of a parent company and its subsidiaries into a single set of financial statements. The parent company uses the acquisition method as prescribed by NFRS 3, "Business Combination," to measure the cost of an acquisition. The cost is calculated as the difference between the fair value of the assets obtained and the fair value of the purchase consideration paid. The excess of the purchase consideration paid over the fair value of the assets has been recognized as plan assets. When the parent company loses control over a subsidiary, it derecognizes the assets and liabilities of the former subsidiary from the consolidated statement of financial position and recognizes any investment retained in the former subsidiary at its fair value when control is lost.
+Input question: grant received form sakshyam ?
+Generated response:  Yes, NPR 5,073,953 received as Capital Grant during the Fiscal Year 2016/17.
+Input question: revenue from each geographical areas ?
+Generated response:  Based on the information provided in the annual report, the revenue from each geographical area is as follows:
+
+Province-1: 940,974
+Province-2: 691,887
+Province-3: 9,162,880
+Province-4: 890,173
+Province-5: 1,159,947
+Province-6: 64,150
+Province-7: 306,288
+
+Therefore, the revenue from each geographical area is as follows:
+Total revenue from domestic geographical areas: 13,216,299
+Total revenue from foreign geographical areas: 13,216,299
+
+Note: The information provided in the annual report is based on the company's financial statements and may not reflect the entire geographical area of the company's operations.
+Input question: revenue from each geographical areas ?
+Generated response:  Based on the information provided in the annual report, the revenue from each geographical area is as follows:
+
+Province-1: 940,974
+Province-2: 691,887
+Province-3: 9,162,880
+Province-4: 890,173
+Province-5: 1,159,947
+Province-6: 64,150
+Province-7: 306,288
+
+Therefore, the revenue from each geographical area is as follows:
+Total revenue from domestic geographical areas: 13,216,299
+Total revenue from foreign geographical areas: 13,216,299
+
+Note: The information provided in the annual report is based on the company's financial statements and may not reflect the entire geographical area of the company's operations.
+Input question: test
+Generated response:  I don't know the answer to your question as the provided text does not contain the information you are asking for.
+ * Restarting with watchdog (inotify)
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/home/ai/.local/lib/python3.10/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.97s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  7.37s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:16<00:00,  8.36s/it]
+You are calling `save_pretrained` to a 4-bit converted model, but your `bitsandbytes` version doesn't support it. If you want to save 4-bit models, make sure to have `bitsandbytes>=0.41.3` installed.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+/home/ai/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+ * Debugger is active!
+ * Debugger PIN: 586-660-439

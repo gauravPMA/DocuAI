@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Chat App</title>
+    <!-- Load jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9jdW1lbnR8ZW58MHx8MHx8fDA%3D") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #uploadStatus, #questionStatus {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form id="chatForm">
+        <div id="uploadSection">
+            <h2>Upload PDF</h2>
+            <input type="file" name="pdfUpload" id="pdfUpload" accept=".pdf">
+            <button type="button" id="uploadButton">Upload PDF</button>
+            <p id="uploadStatus"></p>
+        </div>
+
+        <h1>Ask a Question</h1>
+        <label for="question">Question:</label>
+        <input type="text" name="question" id="question" required>
+        <button type="submit" id="askButton">Ask</button>
+        <p id="questionStatus"></p>
+
+        <div id="responseSection" class="response" style="display:none;">
+            <h2>Your Question:</h2>
+            <p id="askedQuestion"></p>
+            <h2>Answer:</h2>
+            <p id="answer"></p>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#uploadButton").click(function() {
+                var fileInput = $("#pdfUpload")[0];
+                var file = fileInput.files[0];
+
+                if (file) {
+                    var formData = new FormData();
+                    formData.append('pdfUpload', file);
+
+                    $.ajax({
+                        url: '/upload_pdf',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(response) {
+                            $("#uploadStatus").text("File uploaded successfully: " + response.filename);
+                            console.log("File uploaded successfully");
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            var errorMessage = "Error uploading file";
+                            if (jqXHR.responseJSON && jqXHR.responseJSON.error) {
+                                errorMessage += ": " + jqXHR.responseJSON.error;
+                            }
+                            $("#uploadStatus").text(errorMessage);
+                            console.log("Error uploading file:", textStatus, errorThrown);
+                        }
+                    });
+                } else {
+                    $("#uploadStatus").text("Please select a file to upload");
+                }
+            });
+
+            $("#chatForm").submit(function(e) {
+                e.preventDefault();
+                var question = $("#question").val();
+
+                if (question) {
+                    $("#questionStatus").text("Processing your question...");
+                    $.ajax({
+                        url: '/ask',
+                        type: 'POST',
+                        data: {question: question},
+                        success: function(response) {
+                            $("#askedQuestion").text(question);
+                            $("#answer").html(response.answer);
+                            $("#responseSection").show();
+                            $("#questionStatus").text("");
+                        },
+                        error: function() {
+                            $("#questionStatus").text("Error processing your question. Please try again.");
+                        }
+                    });
+                } else {
+                    $("#questionStatus").text("Please enter a question");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
